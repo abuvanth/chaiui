@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI Button</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="chai activity" data-startup="true">
+    <div class="chai action bar">
+        <div class="left action">
+            <button class="chai flat icon button"><i class="icon">menu</i></button>
+            <div class="title">Bottom Navigation</div>
+        </div>
+        <div class="right action">
+            <button class="chai flat button">Images <span class="chai badge new">+1</span></button>
+            <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+        </div>
+    </div>
+    <div class="chai body">
+        <h3>Flat Button</h3>
+        <button class="chai button flat ripple">Normal</button>
+        <button class="chai button flat primary">Primary</button>
+        <button class="chai button flat secondary">Secondary</button>
+        <button class="chai button disabled">Disabled</button>
+
+        <h3>Raised Button</h3>
+        <button class="chai button raised">Normal</button>
+        <button class="chai button raised primary ripple">Primary</button>
+        <button class="chai button raised secondary">Secondary</button>
+        <button class="chai button raised secondary"><i class="icon">file_download</i> Secondary</button>
+        <button class="chai button disabled">Secondary</button>
+
+        <h3>Labeled Button</h3>
+        <div class="chai labeled button raised primary">
+            <div class="chai label"><i class="icon">filter_center_focus</i></div>
+            <div class="chai button ignore">Record</div>
+        </div>
+        <div class="chai labeled button raised secondary">
+            <div class="chai label right"><i class="icon">file_download</i></div>
+            <div class="chai button ignore">Download</div>
+        </div>
+        <div class="chai labeled button raised disabled">
+            <div class="chai label right"><i class="icon">file_download</i></div>
+            <div class="chai button ignore">Download</div>
+        </div>
+
+        <h3>Floating Action Button</h3>
+        <button class="chai raised button fab primary"><i class="icon">add</i></button>
+        <button class="chai raised button fab secondary"><i class="icon">delete</i></button>
+        <button class="chai raised button fab disabled"><i class="icon">delete</i></button>
+
+        <h3>Icon Button</h3>
+        <button class="chai flat button icon"><i class="icon">exit_to_app</i></button>
+        <button class="chai flat button icon primary"><i class="icon">exit_to_app</i></button>
+        <button class="chai flat button icon secondary"><i class="icon">exit_to_app</i></button>
+        <button class="chai flat button icon disabled"><i class="icon">exit_to_app</i></button>
+
+        <h3>Test</h3>
+        <button class="chai button raised ripple">button</button>
+    </div>
+</div>
+
+<script>
+    chai.init();
+</script>
+</body>
+</html>

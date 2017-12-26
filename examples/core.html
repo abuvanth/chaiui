@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI Core</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+</head>
+<body>
+    <div class="chai activity" data-startup="true">
+        <div class="chai action bar">
+            <button class="chai flat icon button"><i class="icon">menu</i></button>
+            <div class="title">Bottom Navigation</div>
+            <div class="right action">
+                <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+            </div>
+        </div>
+        <div class="chai body">
+            <button class="chai button flat primary">Primary</button>
+            <button class="chai button flat secondary">Secondary</button>
+        </div>
+    </div>
+
+    <div class="chai activity" id="sec_activity">
+        <div class="chai action bar">
+            <button class="chai flat icon button" id="back"><i class="icon">arrow_back</i></button>
+            <div class="title">Second Activity</div>
+        </div>
+        <div class="chai body">
+            <button class="chai button raised primary">Hello</button>
+        </div>
+    </div>
+
+
+    <script>
+        bs.select(".chai.flat.primary").bind("click", function () {
+            chai.startActivity(bs.select("#sec_activity").get());
+        });
+        bs.select("#back").bind("click", function () {
+            chai.finishActivity();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI ActionBar</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="chai activity" data-startup="true">
+    <div class="chai drawer">
+        <div class="drawer">
+            <div class="title">Menu</div>
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </div>
+    <div class="chai action bar">
+        <button class="chai flat icon button" id="menubar"><i class="icon">menu</i></button>
+        <div class="title">Bottom Navigation</div>
+        <div class="right action">
+            <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+        </div>
+    </div>
+    <div class="chai body">
+        <h1>Hello, World!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio dolor dolorem facere, id illo ipsum mollitia, nemo obcaecati odio quod ratione sit tempore temporibus unde vel, velit veniam vitae!</p>
+        <div class="item1">Item 1</div>
+    </div>
+</div>
+
+<script>
+    chai.init();
+
+    // options menu
+    var menu_bar = bs.select(".right.action .button");
+    var menu = chai.optionsMenu(menu_bar.get());
+    menu.addOption("Refresh", function () {
+        console.log("ok");
+    }).addOption("Help", function () {
+            console.log(this);
+        })
+        .addOption("Sign Out", function () {
+            console.log(this);
+        })
+        .create();
+
+    // navigation drawer
+    var drawer_bar = bs.select("#menubar");
+    var drawer = chai.navigationDrawer(bs.select(".chai.drawer").get());
+
+
+    bs.select(".chai.drawer .item").bind("click", function () {
+        console.log("CLICKED");
+    });
+    drawer.create();
+    drawer_bar.bind("click", function () {
+        drawer.open();
+    });
+
+</script>
+</body>
+</html>

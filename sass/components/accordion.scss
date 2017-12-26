@@ -1,0 +1,46 @@
+.chai.accordion {
+  display: block;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+
+  li {
+    list-style: none;
+  }
+  .header {
+    padding: 1rem;
+    @include flex();
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  .content {
+    -webkit-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+    -moz-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+    -ms-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+    -o-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+    transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+    overflow: hidden;
+    height: 0;
+    padding: 0 2rem;
+  }
+  .visible {
+    .content {
+      padding: 2rem;
+      overflow: auto;
+      border-bottom: 1px solid #ddd;
+      height: max-content;
+      -webkit-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+      -moz-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+      -ms-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+      -o-transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+      transition: padding-top .2s ease-in-out, padding-bottom .2s ease-in-out;
+    }
+  }
+}

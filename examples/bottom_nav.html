@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI ActionBar</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="chai activity" data-startup="true">
+    <div class="chai action bar">
+        <div class="left action">
+            <button class="chai flat icon button"><i class="icon">menu</i></button>
+            <div class="title">Bottom Navigation</div>
+        </div>
+        <div class="right action">
+            <button class="chai flat button">Images <span class="chai badge new">+1</span></button>
+            <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+        </div>
+    </div>
+    <div class="chai body">
+    </div>
+</div>
+
+<script>
+    var menu = chai.optionsMenu(bs.select(".action.right .button.icon").get());
+    menu.addOption("Settings", function () {
+        console.log("settings");
+    });
+    menu.addOption("Feedback", function () {
+        console.log("feedback");
+    });
+    menu.addOption("Terms & Conditions", function () {
+        console.log("terms");
+    });
+    menu.addOption("Exit", function () {
+        console.log("exit");
+    });
+    menu.create();
+
+    // navigation drawer
+    var drawer_bar = bs.select(".left.action .button");
+    var drawer = chai.navigationDrawer(drawer_bar.get());
+    drawer.addSection("Menu", [
+        {
+            content: "Item 1",
+            callback: function () {
+                console.log("hello1");
+            }
+        },
+        {
+            content: "Item 2",
+            callback: function () {
+                console.log("hello2");
+            }
+        }
+    ]);
+    drawer.create();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.chai.collections {
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  @include border-radius(2px);
+  overflow: hidden;
+  .collection {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-secondary;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .collection:hover {
+    background: #EEEEEE;
+  }
+}

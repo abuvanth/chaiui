@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI ActionBar</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="chai activity" data-startup="true">
+    <div class="chai action bar">
+        <div class="left action">
+            <button class="chai flat icon button"><i class="icon">menu</i></button>
+            <div class="title">Accordion</div>
+        </div>
+        <div class="right action">
+            <button class="chai flat button">Images <span class="chai badge new">+1</span></button>
+            <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+        </div>
+    </div>
+    <div class="chai body">
+        <div class="chai dropdown">
+            <button class="chai button raised secondary">Dropdown <i class="icon">arrow_drop_down</i></button>
+            <ul>
+                <li class="justify between">Item 1 <span class="chai badge new">+3</span></li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+
+        <div class="chai dropdown">
+            <button class="chai button raised secondary">Dropdown <i class="icon">arrow_drop_down</i></button>
+            <ul>
+                <li class="justify between">Item 1 <span class="chai badge new">+3</span></li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var menu = chai.optionsMenu(bs.select(".action.right .button.icon").get());
+    menu.addOption("Settings", function () {
+        console.log("settings");
+    });
+    menu.addOption("Feedback", function () {
+        console.log("feedback");
+    });
+    menu.addOption("Terms & Conditions", function () {
+        console.log("terms");
+    });
+    menu.addOption("Exit", function () {
+        console.log("exit");
+    });
+    menu.create();
+</script>
+</body>
+</html>

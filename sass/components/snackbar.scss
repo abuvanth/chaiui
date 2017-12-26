@@ -1,0 +1,31 @@
+.chai.snackbar {
+  position: fixed;
+  bottom: -100%;
+  visibility: hidden;
+  padding: 10px 20px;
+  left: 50%;
+  background-color: #323232;
+  border-radius: 2px;
+  font-weight: 300;
+  z-index: 99;
+  min-width: 260px;
+  max-width: 100%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all .25s cubic-bezier(.4,0,1,1),-webkit-transform .25s cubic-bezier(.4,0,1,1);
+  transition: all .25s cubic-bezier(.4,0,1,1),-webkit-transform .25s cubic-bezier(.4,0,1,1);
+  color: #FFFFFF;
+
+  &.visible {
+    bottom: 20px;
+    visibility: visible;
+    -webkit-transition: all .25s cubic-bezier(.4,0,1,1),-webkit-transform .25s cubic-bezier(.4,0,1,1);
+    transition: all .25s cubic-bezier(.4,0,1,1),-webkit-transform .25s cubic-bezier(.4,0,1,1);
+  }
+  &.hidden {
+    bottom: -100%;
+    visibility: hidden;
+    -webkit-transition: all .25s cubic-bezier(.4,0,1,1),-webkit-transform .25s cubic-bezier(.4,0,1,1);
+    transition: all .25s cubic-bezier(.4,0,1,1),-webkit-transform .25s cubic-bezier(.4,0,1,1);
+  }
+}

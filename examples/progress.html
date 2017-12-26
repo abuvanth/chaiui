@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI ActionBar</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="chai activity" data-startup="true">
+    <div class="chai drawer">
+        <div class="drawer">
+            <div class="title">Menu</div>
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </div>
+    <div class="chai action bar">
+        <button class="chai flat icon button"><i class="icon">menu</i></button>
+        <div class="title">Bottom Navigation</div>
+        <div class="right action">
+            <button class="chai flat button">Images</button>
+            <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+        </div>
+    </div>
+    <div class="chai body">
+        <div class="chai spinner"></div>
+        <div class="chai spinner legacy">
+            <div class="chai spinner"></div>
+            <div class="title">Loading...</div>
+        </div>
+
+        <!-- progress bar -->
+        <div class="chai progress bar">
+            <div class="fill"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var menu = chai.optionsMenu(bs.select(".action.right .button.icon").get());
+    menu.addOption("Settings", function () {
+        console.log("settings");
+    });
+    menu.addOption("Feedback", function () {
+        console.log("feedback");
+    });
+    menu.addOption("Terms & Conditions", function () {
+        console.log("terms");
+    });
+    menu.addOption("Exit", function () {
+        console.log("exit");
+    });
+    menu.create();
+
+    // navigation drawer
+    var drawer_bar = bs.select(".chai.action.bar .button");
+    var drawer = chai.navigationDrawer(bs.select(".chai.drawer").get());
+
+
+    bs.select(".chai.drawer .item").bind("click", function () {
+        console.log("CLICKED");
+    });
+    drawer.create();
+    drawer_bar.bind("click", function () {
+        drawer.open();
+    });
+
+    // legacy spinner
+    var spinner = chai.createSpinnerLegacy(bs.select(".chai.spinner.legacy").get());
+    spinner.show();
+</script>
+</body>
+</html>

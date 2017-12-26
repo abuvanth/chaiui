@@ -1,0 +1,51 @@
+.chai.select {
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  background-color: #FFFFFF;
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    @include transform(translateY(-50%));
+    color: #444;
+  }
+  .label {
+    display: block;
+    border: none;
+    padding: 5px;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 100%;
+    color: #444;
+  }
+
+  &.raised {
+    padding: 10px 20px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    @include border-radius(2px);
+
+    .label {
+      border: none;
+    }
+    .icon {
+      right: 20px;
+    }
+  }
+
+  &.disabled {
+    box-shadow: none;
+    opacity: .5;
+    cursor: not-allowed;
+
+    &.raised {
+      background-color: #ccc;
+    }
+
+    .label {
+      cursor: not-allowed;
+    }
+  }
+}

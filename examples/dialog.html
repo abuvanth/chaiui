@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChaiUI ActionBar</title>
+    <link rel="stylesheet" href="../dist/css/fonts/icons/icons.css">
+    <link rel="stylesheet" href="../dist/css/chai.css">
+    <script src="../dist/js/chai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="chai activity" data-startup="true">
+    <div class="chai action bar">
+        <div class="left action">
+            <button class="chai flat icon button"><i class="icon">menu</i></button>
+            <div class="title">Home</div>
+        </div>
+        <div class="right action">
+            <button class="chai flat icon button"><i class="icon">more_vert</i></button>
+        </div>
+    </div>
+    <div class="chai body">
+        <button class="chai button raised secondary" id="alert">Alert</button>
+        <button class="chai button raised secondary" id="confirm">Confirm</button>
+
+        <div class="chai dialog">
+            <div class="title">Custom Dialog</div>
+            <div class="content">Hello, World!</div>
+            <div class="action">
+                <button class="chai button flat primary">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var alert = chai.createAlert("Alert", "Hello, world!");
+    var confirm = chai.createConfirm("Confirm", "Do you want to delete?");
+    bs.select("#alert").bind("click", alert.show);
+    bs.select("#confirm").bind("click", confirm.show);
+
+    confirm.onSuccess(function () {
+        console.log("ok");
+    });
+    confirm.onFail(function () {
+        console.log("failed");
+    });
+
+    var dialog = chai.createDialog(bs.select(".chai.dialog").get());
+</script>
+</body>
+</html>
